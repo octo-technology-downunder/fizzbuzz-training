@@ -54,7 +54,7 @@ public class LagsService {
             }
             writer.close();
         } catch (IOException e) {
-            // TODO CRU what do you want to do here ?
+            // TODO IMPLEMENTS
         }
     }
 

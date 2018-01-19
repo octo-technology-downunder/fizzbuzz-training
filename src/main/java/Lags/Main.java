@@ -61,7 +61,7 @@ public class Main {
     }
 
 
-    //// lit le fihier des ordres et calcule le CA
+    //// read the file and give order
     //static void getFichierOrder(String fileName)
     //{
     //    try
