@@ -1,18 +1,17 @@
 package MockAndStub;
 
 public class Calculator {
-    private SomeStuff someStuff;
+    private RandomNumberGenerator randomNumberGenerator;
 
     public Calculator() {
-        this.someStuff = new SomeStuff();
+        this.randomNumberGenerator = new RandomNumberGenerator();
+    }
+
+    public Calculator(RandomNumberGenerator randomNumberGenerator) {
+        this.randomNumberGenerator = randomNumberGenerator;
     }
 
     public String calculate(String input) {
-
-        if(someStuff.handleInput(input).equals("")) {
-            return "Handled";
-        } else {
-            return "Something";
-        }
+        return "";
     }
 }

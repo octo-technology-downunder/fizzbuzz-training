@@ -1,0 +1,7 @@
+Rules :
+Somestuff will be renamed and it will generate a random number
+If the input letter is a VOWEL and the generated number is ODD , return A
+
+If the input letter is a VOWEL and the generated number is EVEN , return B
+If the input letter is NOT a VOWEL and the generated number is ODD , return C
+If the input letter is NOT a VOWEL and the generated number is EVEN , return D
