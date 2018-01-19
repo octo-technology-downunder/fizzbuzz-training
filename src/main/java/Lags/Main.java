@@ -6,20 +6,23 @@ import java.io.InputStreamReader;
 
 public class Main {
 
+    private static final PricingService service = new PricingService();
+    private static final OrderService orderService = new OrderService();
+
     static final boolean debug = true;
-    // ==================
-    // main function
-    // ===================
 
     public static void main(String[] args) throws IOException
     {
-        LagsService service = new LagsService();
-        service.getFileOrder("..\\ORDRES.CSV");
+
+        orderService.getFileOrder("..\\ORDRES.CSV");
+
+        handleInput();
+    }
+
+    private static void handleInput() throws IOException {
         boolean flag = false;
-        // While it's not the end
         while (!flag)
         {
-            // command is now Z
             char command = 'Z';
             while (command != 'A' && command != 'L' && command != 'S' && command != 'Q' && command != 'C')
             {
@@ -38,53 +41,25 @@ public class Main {
                 }
                 case 'L':
                 {
-                    service.list();
+                    orderService.printOrders();
                     break;
                 }
                 case 'A':
                 {
-                    service.addOrder();
+                    orderService.addOrder();
                     break;
                 }
                 case 'S':
                 {
-                    service.suppress();
+                    orderService.suppress();
                     break;
                 }
                 case 'C':
                 {
-                    service.calculateTheGS(debug);
+                    service.calculateTheGS(debug,orderService.getListOrder());
                     break;
                 }
             }
         }
     }
-
-
-    //// read the file and give order
-    //static void getFichierOrder(String fileName)
-    //{
-    //    try
-    //    {
-    //        using (var reader = new StreamReader(fileName))
-    //        {
-    //            while (!reader.EndOfStream)
-    //            {
-    //                var champs = reader.ReadLine().Split(';');
-    //                String chp1 = champs[0];
-    //                int chp2 = Int32.Parse(champs[1]);
-    //                int champ3 = Int32.Parse(champs[2]);
-    //                double chp4 = Double.Parse(champs[3]);
-    //                Ordre ordre = new Ordre(chp1, chp2, champ3, chp4);
-    //                laListe.Add(ordre);
-    //            }
-    //        }
-    //    }
-    //    catch (FileNotFoundException e)
-    //    {
-    //        Console.WriteLine("FICHIER ORDRES.CSV NON TROUVE. CREATION FICHIER.");
-    //        WriteOrdres(fileName);
-    //    }
-    //}
-
 }

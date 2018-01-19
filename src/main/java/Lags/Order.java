@@ -53,4 +53,9 @@ public class Order {
     public void setPrice(double pricd) {
         this.price = pricd;
     }
+
+    @Override
+    public String toString() {
+        return String.format("%-8s %10d %5d %10f", getId(), getStart(), getDuration(), getPrice());
+    }
 }
