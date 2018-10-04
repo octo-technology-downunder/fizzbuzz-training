@@ -1,4 +1,4 @@
-# fizzbuzz-training
+# TDD kata
 A starting project for FizzBuzz kata in TDD
 
 ## Stage 1:
